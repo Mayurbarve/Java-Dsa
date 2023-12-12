@@ -1,4 +1,4 @@
 # DsaJava 
 Dsa-Java Repository. 
 <br>
-Author- Mayur Dudhbarve
+Author- Mayura Barve
