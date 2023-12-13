@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class In_out{
+public class InOut{
     public static void main(String[] args){
         //for output
         System.out.println("first github repository");
