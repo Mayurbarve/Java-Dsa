@@ -2,12 +2,13 @@
 // Source code recreated from a .class file by IntelliJ IDEA
 // (powered by FernFlower decompiler)
 //
+package Array;
 
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class ArrList {
-    public ArrList() {
+public class Arrlist {
+    public Arrlist() {
     }
 
     public static void main(String[] args) {
