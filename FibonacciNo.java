@@ -1,27 +1,25 @@
-//
-// Source code recreated from a .class file by IntelliJ IDEA
-// (powered by FernFlower decompiler)
-//
+
+//Fibonacci Number Series
 
 import java.util.Scanner;
 
-public class FibonacciNo {
-    public FibonacciNo() {
-    }
+class FibonacciNo {
 
     public static void main(String[] args) {
         System.out.println("Fibonacci Number Series");
         Scanner in = new Scanner(System.in);
+
         int n = in.nextInt();
         int a = 0;
         int b = 1;
 
-        for(int count = 2; count <= n; ++count) {
-            int temp = b;
-            b += a;
-            a = temp;
-        }
+        for (int i = 2; i < n; i++) {
+            int temp = a + b;
+            a = b;
+            b = temp;
 
-        System.out.println("On Index " + n + " Fibonacci no is: " + b);
+        }
+        System.out.println("In index " + n + " Fibonacci number is " + b);
+        in.close();
     }
 }

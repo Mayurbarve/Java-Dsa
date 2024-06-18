@@ -1,23 +1,18 @@
-import java.util.Scanner;
 
-public class Loop{
-    public static void main(String[] args){
-    //While loop
-    int count = 1;
-    while(count != 5){
-        Sytstem.out.println(count);
-        count++;
-    }
-    //for loop
-    for(int count=1;  count != 5; count++){
-        System.out.println(count);
-    }
-    //do while loop
-    int num1=1;
-    do{
-        System.out.println(num);
-        num++;
-    }
-    while(n!=1);
+public class Loop {
+    public static void main(String[] args) {
+        System.out.println("For loop");
+        //for loop
+        for (int i = 0; i <= 5; i++) {
+            System.out.print(i+" ");
+        }
+        System.out.println(" ");
+        System.out.println("While Loop");
+        //while loop
+        int i = 0;
+        while (i <= 5) {
+            System.out.print(i+" ");
+            i++;
+        }
     }
 }

@@ -1,17 +1,18 @@
+// Input and Output
+
 import java.util.Scanner;
 
-public class InOut{
-    public static void main(String[] args){
-        //for output
-        System.out.println("first github repository");
+public class InOut {
+    public static void main(String[] args) {
+        System.out.println("Input and Output");
+        // for INput Scanner
+        Scanner n = new Scanner(System.in);
 
-        // for Taking input
-        Scanner in = new Scanner(System.in);
+        int num = n.nextInt();
 
-        //object for input
-        int obj = in.nextInt();
-
-        System.out.println("integar value:"+ obj);
-
+        // for Output System.oout.print
+        System.out.println("Enterd Input is: "+ num);
+        n.close();
     }
+
 }
