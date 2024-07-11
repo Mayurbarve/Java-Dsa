@@ -8,6 +8,7 @@ public class RepeatedNo {
  
         int n = in.nextInt();
         int num_count = in.nextInt();
+        in.close();
 
         int count = 0;
         while ( n > 0){
