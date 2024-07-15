@@ -1,5 +1,6 @@
 
 //Fibonacci Number Series
+package JavaProblems;
 
 import java.util.Scanner;
 

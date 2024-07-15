@@ -1,5 +1,5 @@
 //Reverse Number
-
+package JavaProblems;
 import java.util.Scanner;
 
 public class ReverseNo {

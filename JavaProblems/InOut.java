@@ -1,4 +1,5 @@
 // Input and Output
+package JavaProblems;
 
 import java.util.Scanner;
 

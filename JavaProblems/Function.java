@@ -1,5 +1,5 @@
 // Function
-
+package JavaProblems;
 import java.util.Scanner;
 
 public class Function {

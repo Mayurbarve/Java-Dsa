@@ -1,5 +1,5 @@
 //Simple Calculator
-
+package JavaProblems;
 import java.util.Scanner;
 
 public class SimpleCalculater {
