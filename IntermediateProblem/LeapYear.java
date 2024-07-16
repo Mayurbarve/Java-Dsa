@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 public class LeapYear {
     public static void main(String[] args) {
-        System.out.println("| Leap YeAr of Not | ");
+        System.out.println("| Leap YeAr of Not |");
         Scanner in = new Scanner(System.in);
 
         System.out.print("Enter the Year: ");
@@ -15,7 +15,7 @@ public class LeapYear {
         boolean LeapYear = false;
         
         if(year % 4 == 0){
-            if(year % 100 ==0){
+            if(year % 100 == 0){
                 if(year % 400 == 0){
                     LeapYear = true;
                 }
