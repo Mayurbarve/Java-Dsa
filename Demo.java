@@ -1,59 +1,51 @@
 import java.util.Scanner;
 
+/**
+ * Demo
+ */
 public class Demo {
 
     public static void main(String[] args) {
-        Scanner in = new Scanner(System.in);
+        System.out.println("Armstrong Number");
+        Scanner in  =  new Scanner(System.in);
 
-        System.out.println("Enter the Number");
-        String nums = in.next();
+        System.out.print("Enter the Number: ");
+        int Num = in.nextInt();
 
-        int revNum = Integer.parseInt(nums);
-
-        int reverse = reverseFun(revNum);
-
-        System.out.println("Reverse nUm is "+ reverse);
+        if(isArmstrong(Num)){
+            System.out.println(Num +" is Armstrong");
+        }
+        else{
+            System.out.println(Num +" is Not Armstrong Number");
+        }
         in.close();
     }
 
-    public static int reverseFun(int n){
+    public static boolean isArmstrong(int num){
+        int realNum = num;
+        int digits = countNum(num);
         int sum = 0;
 
-        while(n != 0){
-            sum += n % 10; 
-            n /= 10;
+        while(num != 0){
+            int digit = num % 10;
+            sum += Math.pow(digit, digits);
+            num /= 10;
         }
-         return sum;
+
+        if(realNum == sum){
+            return true;
+        }
+        else{
+            return false;
+        }
     }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
+    public static int countNum(int num) {
+        int count = 0;
+        while (num != 0) {
+            count++;
+            num /= 10;
+        }
+        return count;
+    }
 }
