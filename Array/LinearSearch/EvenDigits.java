@@ -1,6 +1,7 @@
 //Return how many of them contain an even number of digits
+package Array.LinearSearch;
 
-public class Demo {
+public class EvenDigits{
     public static void main(String[] args) {
         int[] nums = {12, 345, 2, 6, 7896};
         System.out.println(findNumber(nums));
