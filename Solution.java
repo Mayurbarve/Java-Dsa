@@ -14,35 +14,52 @@ public class Solution {
         int[] arr = new int[arrSize];
 
         //get the array element using randaom insted of getting through the user
-        System.out.println("Enter the array: ");
         for(int i = 0; i < arr.length; i++){
             arr[i] = (int)(Math.random()*100); //in.nextInt();
         }
-
-        //Print the unsorted array
-        System.out.println("Unsort array");
-        for(int i = 0; i< arr.length; i++){
+        for(int i = 0; i < arr.length; i++){
             System.out.print(arr[i] + " ");
         }
+
+        System.out.println();
+        System.out.print("Enter the target element: ");
+        int target = in.nextInt();
+
+        System.out.println("Element on index: " + arrayorder(arr, target));
         in.close();
 
-        //Now sort the array 
-        int temp = 0;
-        for(int i =  0; i<arr.length; i++){
-            for(int j = i+1; j < arr.length; j++){
-                if(arr[j] < arr[i]){
-                    temp = arr[i];
-                    arr[i] = arr[j];
-                    arr[j] = temp;
+    }
+    
+    static int arrayorder(int[] arr, int target){
+        int start = 0;
+        int end = arr.length - 1;
+
+        // find whether the array is sorted in ascending or descending
+        boolean isAsc = arr[start] < arr[end];
+
+        while (start <= end) {
+            // find middle element
+            int mid = start + (end - start) / 2;
+
+            if (arr[mid] == target) {
+                return mid;
+            }
+
+            if (isAsc) {
+                if (target < arr[mid]) {
+                    end = mid - 1;
+                } else {
+                    start = mid + 1;
+                }
+            } else {
+                if (target > arr[mid]) {
+                    end = mid - 1;
+                } else {
+                    start = mid + 1;
                 }
             }
         }
- 
-        //print the sort array
-        System.out.println();
-        System.out.println("Sorted array");
-        for(int i = 0; i< arr.length; i++){
-            System.out.print(arr[i] + " ");
-        }   
-    }   
+        return -1;
+    }
+    
 }

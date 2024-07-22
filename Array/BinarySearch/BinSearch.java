@@ -1,6 +1,5 @@
 package Array.BinarySearch;
 
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class BinSearch {
@@ -14,18 +13,10 @@ public class BinSearch {
         int[] arr = new int[arrSize];
 
         for(int k = 0; k < arrSize; k++){
-            arr[k] = (int)(Math.random()*100); // scan.nextInt();
+            arr[k] = scan.nextInt(); // assending order
             
         }
-        System.out.println("Unsorted Array");
-        for(int i = 0; i < arrSize; i++){
-            System.out.print(arr[i] + " ");
-        }
-
-        Arrays.sort(arr);
-
-        System.out.println();
-        System.out.println("Sorted Array");
+        System.out.println("Array");
         for(int i = 0; i < arrSize; i++){
             System.out.print(arr[i] + " ");
         }
