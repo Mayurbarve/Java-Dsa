@@ -1,3 +1,4 @@
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Solution {
@@ -5,16 +6,26 @@ public class Solution {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
 
-        String str = in.nextLine();
-        in.close();
+        int arrSize = in.nextInt();
 
-        System.out.println("String: "+ str);
+        int[] arr = new int[arrSize];
 
-        String rev = "";
-        for (int i = str.length() -1; i >= 0; i--) {
-            rev = rev + str.charAt(i);
+        for (int i = 0; i < arr.length; i++) {
+            arr[i] = (int)(Math.random()*100);
         }
-        System.out.println("Reverse: " + rev);
+
+        System.out.println(Arrays.toString(arr));
+
+        int[] reverse = new int[arrSize];
+
+        int j = arrSize;
+        for (int i = 0; i < arrSize; i++) {
+            reverse[j -1] = arr[i];
+            j--;
+        }
+
+        System.out.println(Arrays.toString(reverse));
     }
 
 }
+

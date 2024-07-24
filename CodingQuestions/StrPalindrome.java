@@ -15,7 +15,7 @@ public class StrPalindrome {
         System.out.println();
 
         boolean result = palindromeStr(str);
-        if(result == true){
+        if(result){
             System.out.println("String is Palindrome");
         }
         else{
@@ -26,7 +26,7 @@ public class StrPalindrome {
     static boolean palindromeStr(String str){
         String rev = "";
         for (int i = str.length()-1; i >= 0; i--) {
-            rev = rev + str.charAt(i);
+            rev += str.charAt(i);
         }
 
         if(str.contentEquals(rev)){
