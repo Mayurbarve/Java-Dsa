@@ -27,29 +27,16 @@ public class Selection {
     }
 
     static void selectionSort(int[] arr) {
-        for (int i = 0; i < arr.length; i++) {
-            // find the max item in the reamining array and swap with correct index
-            int last = arr.length - i - 1;
-            int maxIndex = maxElement(arr, 0, last);
-            swap(arr, maxIndex, last);
-        }
-    }
-
-    // Swap the max element with the last element
-    static void swap(int[] arr, int first, int second) {
-        int temp = arr[first];
-        arr[first] = arr[second];
-        arr[second] = temp;
-    }
-
-    // get max element from the array between start and end element
-    private static int maxElement(int[] arr, int start, int end) {
-        int max = start;
-        for (int i = start; i < end; i++) {
-            if (arr[max] < arr[i]) {
-                max = i;
+        for (int i = 0; i < arr.length-1; i++) {
+            int smallest = i;
+            for (int j = i + 1; j < arr.length; j++) {
+                if(arr[smallest] > arr[j]){
+                    smallest = j;
+                }
             }
+            int temp = arr[smallest];
+            arr[smallest] = arr[i];
+            arr[i] = temp;
         }
-        return max;
     }
 }

@@ -8,36 +8,36 @@ public class Bubble {
         Scanner scan = new Scanner(System.in);
         System.out.println("Bubble Sort");
 
-        System.out.print("Enter the Array Size: ");
+        System.out.println("Enter the Size of array");
         int arrSize = scan.nextInt();
+        scan.close();
 
         int[] arr = new int[arrSize];
-        //System.out.println("Enter the Array Element");
         for (int i = 0; i < arr.length; i++) {
-            arr[i] = (int)(Math.random()*100); //scan.nextInt();  for manul array element
+            arr[i] = (int)(Math.random()*100);
         }
-        System.out.println("Unsorted array");
+
+        System.out.println("Unsorted Array: ");
         System.out.println(Arrays.toString(arr));
 
+        System.out.println("Sorted Array: ");
         bubbleSort(arr);
-        System.out.println("sorted Arrays");
         System.out.println(Arrays.toString(arr));
-        scan.close();
     }
-    
+
     static void bubbleSort(int[] arr){
         boolean swapped;
-        for (int i = 0; i < arr.length; i++) {
+        for (int i = 0; i < arr.length - 1; i++) {
             swapped = false;
-            for (int j = 1; j < arr.length - i; j++) {
-                if(arr[j] < arr[j-1]){
+            for (int j = 0; j < arr.length - i -1; j++) {
+                if(arr[j] > arr[j+1]){
                     int temp = arr[j];
-                    arr[j] = arr[j-1];
-                    arr[j-1] = temp;
+                    arr[j] = arr[j+1];
+                    arr[j+1] = temp;
                     swapped = true;
                 }
             }
-            if(swapped == false){
+            if(!swapped){
                 break;
             }
         }

@@ -4,9 +4,11 @@ import java.util.Scanner;
 public class Solution {
 
     public static void main(String[] args) {
-        Scanner in = new Scanner(System.in);
 
-        int arrSize = in.nextInt();
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("Enter the array Size");
+        int arrSize = sc.nextInt();
 
         int[] arr = new int[arrSize];
 
@@ -14,18 +16,31 @@ public class Solution {
             arr[i] = (int)(Math.random()*100);
         }
 
+        System.out.println("Unsorted Arrays");
         System.out.println(Arrays.toString(arr));
 
-        int[] reverse = new int[arrSize];
+        selectionSort(arr);
+        System.out.println("Sorted Arrays");
+        System.out.println(Arrays.toString(arr));
+        
+    }
 
-        int j = arrSize;
-        for (int i = 0; i < arrSize; i++) {
-            reverse[j -1] = arr[i];
-            j--;
+    static void selectionSort(int[] arr){
+    for (int i = 0; i < arr.length-1; i++) {
+        int smallest = i;
+        for (int j = i +1; j < arr.length; j++) {
+            if(arr[smallest] > arr[j]){
+                smallest = j;
+            }
         }
 
-        System.out.println(Arrays.toString(reverse));
+        int temp = arr[smallest];
+        arr[smallest] = arr[i];
+        arr[i] = temp;
     }
+    
+    }
+    
 
 }
 
