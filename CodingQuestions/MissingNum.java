@@ -4,7 +4,7 @@ public class MissingNum {
     public static void main(String[] args) {
         System.out.println("Missing Number in Array");
 
-        int[] arr = { 1, 2, 3, 5, 6, 9, 8 };
+        int[] arr = { 1, 2, 3, 5, 6, 7, 9, 8 };
 
         int totalElement = arr.length + 1;
         int totalSum = totalElement * (totalElement + 1) / 2;
