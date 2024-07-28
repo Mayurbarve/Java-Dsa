@@ -8,7 +8,7 @@ public class KthLargest {
         System.out.println("Find the kth Largest Element");
         Scanner in = new Scanner(System.in);
 
-        int[] arr = {3,2,1,5,4,6,8,9,0};
+        int[] arr = {3,2,1,6,20,21,9};
         System.out.println(Arrays.toString(arr));
 
         sortArray(arr);

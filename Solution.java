@@ -1,45 +1,46 @@
+import java.util.Arrays;
+import java.util.Scanner;
+
 /**
  * Solution
  */
 public class Solution {
 
-    public static void main(String[] args) {
-        int[] arr = {1,1,1,1,1,2,3,4,7,8,3,4,5,2,2,4,9,8};
-
-        occurrenceOfElement(arr);
-    }
-
-    static void occurrenceOfElement(int[] arr){
-        sortArrays(arr);
-
+    static void sortArray(int[] arr){
         for (int i = 0; i < arr.length -1; i++) {
-            int count = 1;
+            int smallest = i;
             for (int j = i + 1; j < arr.length; j++) {
-                if(arr[i] == arr[j]){
-                    count++;
-                }
-                else{
-                    break;
+                if(arr[smallest] > arr[j]){
+                    smallest = j;
                 }
             }
-
-            System.out.println(arr[i] + " | " + count);
-            i+= (count-1);
-        }
-    }
-
-    static void sortArrays(int[] arr){
-        for (int i = 0; i < arr.length -1; i++) {
-            int minimum = i;
-            for (int j = i + 1; j < arr.length; j++) {
-                if(arr[minimum] > arr[j]){
-                    minimum = j;
-                }
-            }
-
-            int temp = arr[minimum];
-            arr[minimum] = arr[i];
+            int temp = arr[smallest];
+            arr[smallest] = arr[i];
             arr[i] = temp;
         }
+    }
+
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        int[] arr = {1,2,8,4,0,10,12,20,50};
+
+        System.out.println(Arrays.toString(arr));
+        sortArray(arr);
+        System.out.println(Arrays.toString(arr));
+
+        System.out.print("Enter the Kth Smallest Emelemt: ");
+        int kth = in.nextInt();
+        in.close();
+
+        for (int i = 0; i < arr.length; i++) {
+            if(i == (kth -1)){
+                System.out.println("Kth Smallest: " + arr[i]);
+            }
+        }
+
+        
+        
+
+
     }
 }
