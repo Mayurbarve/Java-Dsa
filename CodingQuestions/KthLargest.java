@@ -1,41 +1,60 @@
 package CodingQuestions;
-
 import java.util.Arrays;
 import java.util.Scanner;
 
+/*
+
+ */
 public class KthLargest {
-    public static void main(String[] args) {
-        System.out.println("Find the kth Largest Element");
-        Scanner in = new Scanner(System.in);
-
-        int[] arr = {3,2,1,6,20,21,9};
-        System.out.println(Arrays.toString(arr));
-
-        sortArray(arr);
-        System.out.print("Enter the Kth Element: ");
-        int kth = in.nextInt();
-        in.close();
-
-        int kthLargest = arr.length - (kth -1);
-        System.out.print("Kth Largets Element is: "+ kthLargest);
-    }
 
     static void sortArray(int[] arr){
-        boolean swapped;
         for (int i = 0; i < arr.length -1; i++) {
-            swapped = false;
-            for (int j = 0; j < arr.length -i - 1; j++) {
-                if(arr[j] > arr[j+1]){
-                    int temp = arr[j];
-                    arr[j] = arr[j+1];
-                    arr[j+1] = temp;
-                    swapped = true;
+            int smallest = i;
+            for (int j = i + 1; j < arr.length; j++) {
+                if(arr[smallest] > arr[j]){
+                    smallest = j;
                 }
             }
-            if(!swapped){
-                break;
+            int temp = arr[smallest];
+            arr[smallest] = arr[i];
+            arr[i] = temp;
+        }
+    }
+
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        int[] arr = {1,2,8,4,0,10,12,20,50};
+
+        System.out.println(Arrays.toString(arr));
+        sortArray(arr);
+        System.out.println(Arrays.toString(arr));
+
+        System.out.print("Enter the Kth Smallest Emelemt: ");
+        int kth = in.nextInt();
+        
+
+        for (int i = 0; i < arr.length; i++) {
+            if(i == (kth -1)){
+                System.out.println("Kth Smallest: " + arr[i]);
             }
         }
+
+        int[] rev = new int[arr.length];
+
+        int j = arr.length;
+        for (int i = 0; i < arr.length; i++) {
+            rev[j-1] = arr[i];
+            j--;
+        }
+
+
+        for (int i = 0; i < rev.length; i++) {
+            if(i == (kth - 1)){
+                System.out.print("kth Largest: " + rev[i]);
+            }
+        }
+        in.close();
+
 
     }
 }

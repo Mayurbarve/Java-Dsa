@@ -1,5 +1,5 @@
 //Return how many of them contain an even number of digits
-package Array.LinearSearch;
+package Searching.LinearSearch;
 
 public class EvenDigits{
     public static void main(String[] args) {

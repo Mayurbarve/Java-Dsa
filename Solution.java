@@ -1,46 +1,25 @@
-import java.util.Arrays;
 import java.util.Scanner;
 
-/**
- * Solution
- */
 public class Solution {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        System.out.print("Enter a character: ");
+        char ch = scanner.next().charAt(0);
 
-    static void sortArray(int[] arr){
-        for (int i = 0; i < arr.length -1; i++) {
-            int smallest = i;
-            for (int j = i + 1; j < arr.length; j++) {
-                if(arr[smallest] > arr[j]){
-                    smallest = j;
-                }
-            }
-            int temp = arr[smallest];
-            arr[smallest] = arr[i];
-            arr[i] = temp;
+        if (isVowel(ch)) {
+            System.out.println(ch + " is a vowel.");
+        } else if (Character.isLetter(ch)) {
+            System.out.println(ch + " is a consonant.");
+        } else {
+            System.out.println(ch + " is not a valid letter.");
         }
+
+        scanner.close();
     }
 
-    public static void main(String[] args) {
-        Scanner in = new Scanner(System.in);
-        int[] arr = {1,2,8,4,0,10,12,20,50};
-
-        System.out.println(Arrays.toString(arr));
-        sortArray(arr);
-        System.out.println(Arrays.toString(arr));
-
-        System.out.print("Enter the Kth Smallest Emelemt: ");
-        int kth = in.nextInt();
-        in.close();
-
-        for (int i = 0; i < arr.length; i++) {
-            if(i == (kth -1)){
-                System.out.println("Kth Smallest: " + arr[i]);
-            }
-        }
-
-        
-        
-
-
+    public static boolean isVowel(char ch) {
+        ch = Character.toLowerCase(ch);
+        return ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u';
     }
 }
