@@ -1,25 +1,30 @@
-import java.util.Scanner;
-
 public class Solution {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        
-        System.out.print("Enter a character: ");
-        char ch = scanner.next().charAt(0);
-
-        if (isVowel(ch)) {
-            System.out.println(ch + " is a vowel.");
-        } else if (Character.isLetter(ch)) {
-            System.out.println(ch + " is a consonant.");
-        } else {
-            System.out.println(ch + " is not a valid letter.");
-        }
-
-        scanner.close();
+        String str = "12abc34def56"; // Example input
+        System.out.println("The sum of numbers in the string is: " + sumOfNumbers(str));
     }
 
-    public static boolean isVowel(char ch) {
-        ch = Character.toLowerCase(ch);
-        return ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u';
+    public static int sumOfNumbers(String str) {
+        int sum = 0;
+        String temp = "0"; // To store temporary numbers as string
+
+        for (int i = 0; i < str.length(); i++) {
+            char ch = str.charAt(i);
+
+            // If the character is a digit, add it to the temporary string
+            if (Character.isDigit(ch)) {
+                temp += ch;
+            } else {
+                // Convert the temporary string to an integer and add to sum
+                sum += Integer.parseInt(temp);
+                // Reset the temporary string
+                temp = "0";
+            }
+        }
+
+        // Add any remaining number in the temporary string to the sum
+        sum += Integer.parseInt(temp);
+
+        return sum;
     }
 }
