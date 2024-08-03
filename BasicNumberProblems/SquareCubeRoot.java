@@ -7,7 +7,7 @@ public class SquareCubeRoot {
         Scanner in = new Scanner(System.in);
 
         System.out.print("Enter the Number: ");
-        int num = in.nextInt();
+        double num = in.nextDouble();
 
         System.out.println("Select the Option");
         System.out.println("1) Square Root");
@@ -18,10 +18,10 @@ public class SquareCubeRoot {
 
         switch (choice) {
             case 1:
-                System.out.println("Square Root of " + num + " is " + (num * num));
+                System.out.println("Square of " + num + " " + Math.sqrt(num));
                 break;
             case 2:
-                System.out.println("Cube Root of " + num + " is 5" + (num * num * num));
+                System.out.println("Cube of " + num + " " + Math.cbrt(num));
                 break;
             default:
                 System.out.println("Invalid Choice");

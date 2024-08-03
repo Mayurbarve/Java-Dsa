@@ -1,30 +1,30 @@
-public class Solution {
+import java.util.HashSet;
+
+public class Solution{
     public static void main(String[] args) {
-        String str = "12abc34def56"; // Example input
-        System.out.println("The sum of numbers in the string is: " + sumOfNumbers(str));
+        String str = "abcabcbb"; // Example input
+        System.out.println("The length of the longest substring without repeating characters is: " + lengthOfLongestSubstring(str));
     }
 
-    public static int sumOfNumbers(String str) {
-        int sum = 0;
-        String temp = "0"; // To store temporary numbers as string
+    public static int lengthOfLongestSubstring(String s) {
+        // Set to store the characters in the current window
+        HashSet<Character> set = new HashSet<>();
+        int maxLength = 0;
+        int left = 0; // Left pointer of the sliding window
 
-        for (int i = 0; i < str.length(); i++) {
-            char ch = str.charAt(i);
-
-            // If the character is a digit, add it to the temporary string
-            if (Character.isDigit(ch)) {
-                temp += ch;
-            } else {
-                // Convert the temporary string to an integer and add to sum
-                sum += Integer.parseInt(temp);
-                // Reset the temporary string
-                temp = "0";
+        // Iterate over the string with the right pointer
+        for (int right = 0; right < s.length(); right++) {
+            // If the character is already in the set, remove characters from the left until it's removed
+            while (set.contains(s.charAt(right))) {
+                set.remove(s.charAt(left));
+                left++;
             }
+            // Add the current character to the set
+            set.add(s.charAt(right));
+            // Update the maximum length
+            maxLength = Math.max(maxLength, right - left + 1);
         }
 
-        // Add any remaining number in the temporary string to the sum
-        sum += Integer.parseInt(temp);
-
-        return sum;
+        return maxLength;
     }
 }

@@ -10,7 +10,7 @@ class RatUnit {
         int sum = 0;
         int count = 0;
         for (int i = 0; i < n; i++) {
-            sum = sum + arr[i];
+            sum += arr[i];
             count++;
             if (sum >= res)
                 break;
