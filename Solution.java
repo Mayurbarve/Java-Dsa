@@ -1,30 +1,117 @@
-import java.util.HashSet;
+/**
+ * Solution
+ */
+public class Solution {
 
-public class Solution{
-    public static void main(String[] args) {
-        String str = "abcabcbb"; // Example input
-        System.out.println("The length of the longest substring without repeating characters is: " + lengthOfLongestSubstring(str));
+    Node head;
+    private int size;
+
+    Solution(){
+        this.size = 0;
     }
 
-    public static int lengthOfLongestSubstring(String s) {
-        // Set to store the characters in the current window
-        HashSet<Character> set = new HashSet<>();
-        int maxLength = 0;
-        int left = 0; // Left pointer of the sliding window
+    class Node{
+        String data;
+        Node next;
 
-        // Iterate over the string with the right pointer
-        for (int right = 0; right < s.length(); right++) {
-            // If the character is already in the set, remove characters from the left until it's removed
-            while (set.contains(s.charAt(right))) {
-                set.remove(s.charAt(left));
-                left++;
-            }
-            // Add the current character to the set
-            set.add(s.charAt(right));
-            // Update the maximum length
-            maxLength = Math.max(maxLength, right - left + 1);
+        Node(String data){
+            this.data = data;
+            this.next = null;
+            size++;
+        }
+    }
+
+    //aad first
+    public void addFirst(String data){
+        Node newNode = new Node(data);
+        if(head == null){
+            head = newNode;
+            return;
         }
 
-        return maxLength;
+        newNode.next = head;
+        head = newNode;
+    }
+
+    //add last
+    public void addLast(String data){
+        Node newNode = new Node(data);
+        if(head == null){
+            head = newNode;
+            return;
+        }
+
+        Node currNode = head;
+        while(currNode.next != null){
+            currNode = currNode.next;
+            
+        }
+
+        currNode.next = newNode;
+    }
+
+    public void printList(){
+        if(head == null){
+            System.out.println("List is empty");
+            return;
+        }
+
+        Node currNode = head;
+        while(currNode != null){
+            System.out.print(currNode.data + " -> ");
+            currNode = currNode.next;
+        }
+
+        System.out.println("Null");
+    }
+    public void deleteFirst(){
+        if(head == null){
+            System.out.println("list is empty");
+            return;
+        }
+        size--;
+        head = head.next;
+    }
+
+    public void deletelast(){
+        if(head == null){
+            System.out.println("List is empty");
+            return;
+        }
+        size--;
+        if(head.next == null){
+            head = null;
+            return;
+        }
+
+        Node SecondLast = head;
+        Node LastNode = head.next;
+        while(LastNode.next != null){
+            LastNode = LastNode.next;
+            SecondLast = SecondLast.next;
+        }
+
+        SecondLast.next = null;
+    }
+
+    public int getSize(){
+        return size;
+    }
+    public static void main(String[] args) {
+        Solution linkedList = new Solution();
+        linkedList.addFirst("is");
+        linkedList.addFirst("a");
+        linkedList.addLast("art");
+        linkedList.addFirst("This");
+        linkedList.printList();
+        System.out.println(linkedList.getSize());
+
+        linkedList.deleteFirst();
+        linkedList.printList();
+        linkedList.deletelast();
+        linkedList.printList();
+
+        System.out.println(linkedList.getSize());
+
     }
 }
