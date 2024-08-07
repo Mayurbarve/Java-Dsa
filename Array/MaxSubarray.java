@@ -23,6 +23,7 @@ public class MaxSubarray {
 
         
         System.out.println("Largest Sum of Subarray: " + maxSubarray(arr));
+        System.out.println("Largest Sum of Subarray: " + maxSubArraySum(arr));
     }
 
     static int maxSubarray(int[] arr){
@@ -40,5 +41,21 @@ public class MaxSubarray {
         }
 
         return maxSum;
+    }
+
+    //Second Method
+    public static int maxSubArraySum(int[] arr) {
+        int maxSum = arr[0];
+        int maxFind = arr[0];
+
+        for(int nums = 1; nums < arr.length; nums++){
+            maxFind= Math.max(arr[nums], maxFind + arr[nums]);
+
+            maxSum = Math.max(maxSum, maxFind);
+        }
+
+        return maxSum;
+
+
     }
 }

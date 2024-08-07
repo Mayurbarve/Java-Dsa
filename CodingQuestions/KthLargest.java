@@ -21,11 +21,27 @@ public class KthLargest {
         }
     }
 
+    static int LargestKth(int[] arr, int k){
+        for (int i = 0; i < k; i++) {
+            int maxIndex = i;
+            for (int j = i+1; j < arr.length; j++) {
+                if(arr[j] > arr[maxIndex]){
+                    maxIndex = j;
+                }
+            }
+
+            int temp = arr[i];
+            arr[i] = arr[maxIndex];
+            arr[maxIndex] = temp;
+        }
+
+        return arr[k-1];
+    }
+
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
         int[] arr = {1,2,8,4,0,10,12,20,50};
 
-        System.out.println(Arrays.toString(arr));
         sortArray(arr);
         System.out.println(Arrays.toString(arr));
 
@@ -39,24 +55,10 @@ public class KthLargest {
             }
         }
 
-        
-
-        int[] rev = new int[arr.length];
-
-        int j = arr.length;
-        for (int i = 0; i < arr.length; i++) {
-            rev[j-1] = arr[i];
-            j--;
-        }
-
-
-        for (int i = 0; i < rev.length; i++) {
-            if(i == (kth - 1)){
-                System.out.print("kth Largest: " + rev[i]);
-            }
-        }
+        System.out.print("Enter the Kth Largest Element: ");
+        int kthL = in.nextInt();
         in.close();
-
+        System.out.println("kth Largest: " + LargestKth(arr, kthL));
 
     }
 }
