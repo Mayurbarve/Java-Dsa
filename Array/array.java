@@ -1,5 +1,6 @@
 package Array;
 
+import java.util.Arrays;
 
 public class array {
     public static void main(String[] args) {
@@ -14,6 +15,16 @@ public class array {
         for(int i= 0 ; i < arr.length; i++){
             System.out.print(arr[i] + " ");
         }
+
+        System.out.println();
+        int[] newArr = new int[10];
+        int i = 0;
+        for (int j = arr.length - 1; j >= 0; j--) {
+            newArr[i] = arr[j];
+            i++;
+        }
+
+        System.out.println(Arrays.toString(newArr));
     }
     
 }
