@@ -1,5 +1,4 @@
-package Assessment;
-
+package Assessment.Accenture;
 import java.util.Scanner;
 
 public class DistinctNum {

@@ -1,4 +1,4 @@
-package Assessment;
+package Assessment.Accenture;
 /*
  * The function differenceOfSum(n,m) accepts two integers n,m as arguments find the sum of all numbers in range 
  * from 1 to m[both inclusive] that are divisible by n. return difference between sum od integers not divisible

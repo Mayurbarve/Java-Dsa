@@ -31,7 +31,8 @@ public class MergedTwoArrays {
         int j = 0;
 
         HashSet<Integer> set = new HashSet<>();
-        ArrayList<Integer> mergedArrays = new ArrayList<>();
+        
+        ArrayList<Integer> mergedArrays = new ArrayList<Integer>();
 
         while (i < arrOne.length) {
             if (set.add(arrOne[i])) {
