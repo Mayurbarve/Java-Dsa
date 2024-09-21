@@ -1,4 +1,4 @@
-package Assessment.Cognizant;
+
 
 import java.util.Scanner;
 
