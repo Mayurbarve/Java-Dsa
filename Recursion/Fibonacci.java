@@ -10,8 +10,11 @@ public class Fibonacci {
     //     printFibo(b, c, n - 1);
     // }
     static int fibo(int n){
-        if(n < 2){
-            return n;
+        if(n == 0){
+            return 0;
+        }
+        if(n == 1){
+            return 1;
         }
 
         return fibo(n - 1) + fibo(n - 2);
@@ -27,6 +30,6 @@ public class Fibonacci {
 
         // printFibo(a, b, n - 2);
         // in.close();
-        System.out.print(fibo(3));
+        System.out.print(fibo(5));
     }
 }

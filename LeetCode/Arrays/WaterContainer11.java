@@ -1,4 +1,4 @@
-class Solution {
+public class WaterContainer11 {
     public static int maxArea(int[] height) {
         int max = 0;
 
