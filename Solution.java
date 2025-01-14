@@ -1,27 +1,19 @@
 class Solution {
-    public static int maxArea(int[] height) {
-        int max = 0;
+    public static void main(String[] args) {
+        String str = "kanak";
 
-        for (int i = 0; i < height.length; i++) {
-            for (int j = i + 1; j < height.length; j++) {
+        String newStr = "";
 
-                int width = j - i;
-                int area = Math.min(height[i], height[j]) * width;
-
-                if (area > max) {
-                    max = area;
-                }
-            }
+        for (int i = str.length() -1; i >= 0 ; i--) {
+            newStr += str.charAt(i);
         }
 
-        return max;
-
-    }
-
-    public static void main(String[] args) {
-        int[] height = { 1, 8, 6, 2, 5, 4, 8, 3, 7 };
-
-        System.out.println(maxArea(height));
+        if(str.contentEquals(newStr)) {
+            System.out.println("Palindrome");
+        }
+        else{
+            System.out.println("Not Palindrome");
+        }
 
     }
 }

@@ -1,12 +1,11 @@
 public class Factorial {
 
     static int recursion(int n){
-        if(n == 1 || n == 0){
+        if(n < 2){
             return 1;
         }
-
-        int nums = recursion(n - 1);
-        int factorial = n * nums;
+ 
+        int factorial = n * recursion(n - 1);
         return factorial;
     }
 
