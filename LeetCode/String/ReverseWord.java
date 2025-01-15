@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class Solution{
+public class ReverseWord {
 
     // Approach 1: Split and Reverse Using a Stack
     public static String reverseWordsUsingStack(String s) {
